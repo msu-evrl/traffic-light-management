@@ -1,0 +1,28 @@
+// include the library code:
+#include <LiquidCrystal.h>/*display sensor values on LCD*/
+
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(12,11,5,4,3,2);/**/
+
+int ir_in = A1;/*remove pin2 and change values, assign values of lcd ports*/
+
+
+void setup()
+{
+// set up the LCD's number of columns and rows:
+lcd.begin(16, 2);/*compare*/
+lcd.clear();
+
+pinMode(ir_in, INPUT);
+/*remove*/
+}
+
+void loop()
+{
+lcd.setCursor(0,0); // Sets the cursor to col 0 and row 0
+lcd.print("SensorVal1: "); // Prints Sensor Val: to LCD
+lcd.print(analogRead(ir_in)); // Prints value on Potpin1 to LCD
+lcd.setCursor(0,1); // Sets the cursor to col 1 and row 0
+ // Prints Sensor Val: to LCD
+ // Prints value on Potpin1 to LCD
+}
